@@ -350,10 +350,10 @@ FROM
                           AND RANDOM() <
                               CASE
                                   WHEN dates.session_date = u.registration_date THEN 1.0
-                                  WHEN dates.session_date - u.registration_date <= 7 THEN 0.55
-                                  WHEN dates.session_date - u.registration_date <= 30 THEN 0.25
-                                  WHEN dates.session_date - u.registration_date <= 60 THEN 0.10
-                                  ELSE 0.05
+                                  WHEN dates.session_date - u.registration_date <= 7 THEN 0.3
+                                  WHEN dates.session_date - u.registration_date <= 30 THEN 0.1
+                                  WHEN dates.session_date - u.registration_date <= 60 THEN 0.03
+                                  ELSE 0.01
                                   END
                     ) raw_sessions
             ) base_sessions
